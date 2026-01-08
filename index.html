@@ -16,13 +16,24 @@
 <body>
 
 <h1>Junaid</h1>
-<h4><p id="date"></p>
+<h4>
+  It’s currently <span id="time"></span>, <span id="date"></span> — let’s get to work.
+</h4>
 
 <script>
+  function updateTime() {
+    const now = new Date();
+    document.getElementById('time').textContent =
+      now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+  }
+
   const now = new Date();
   document.getElementById('date').textContent =
     now.toLocaleDateString(undefined, { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' });
-</script></h4>
+
+  updateTime();
+  setInterval(updateTime, 1000);
+</script>
 
 <p>Studying Math at NYU with interests in finance, english, and philosophy. Trying to cultivate a creative portfolio + wisdom </p>
 
