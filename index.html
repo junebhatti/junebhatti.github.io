@@ -16,6 +16,13 @@
 <body>
 
 <h1>Junaid</h1>
+<h4><p id="date"></p>
+
+<script>
+  const now = new Date();
+  document.getElementById('date').textContent =
+    now.toLocaleDateString(undefined, { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' });
+</script></h4>
 
 <p>Studying Math at NYU with interests in finance, english, and philosophy. Trying to cultivate a creative portfolio + wisdom </p>
 
