@@ -18,26 +18,22 @@
       flex-shrink: 0;
     }
     
-    .tab {
+    .nav-link {
       display: block;
       padding: 6px 0;
       margin-bottom: 8px;
-      cursor: pointer;
-      background: none;
-      border: none;
       font-family: serif;
       font-size: 17px;
       color: #999;
+      text-decoration: none;
       transition: color 0.2s;
-      text-align: left;
-      width: 100%;
     }
     
-    .tab:hover {
+    .nav-link:hover {
       color: #333;
     }
     
-    .tab.active {
+    .nav-link.active {
       color: #000;
     }
     
@@ -67,138 +63,52 @@
     #date {
       color: #3498db;
     }
-    
-    .content {
-      display: none;
-    }
-    
-    .content.active {
-      display: block;
-    }
-
-    .writing-entry {
-      margin-bottom: 20px;
-    }
-
-    .writing-date {
-      color: #333;
-      margin-bottom: 2px;
-    }
-
-    .writing-link {
-      font-size: 18px;
-    }
   </style>
 </head>
 <body>
 <div class="sidebar">
-  <button class="tab active" onclick="showTab('home')">home</button>
-  <button class="tab" onclick="showTab('about')">about</button>
-  <button class="tab" onclick="showTab('writing')">writing</button>
-  <button class="tab" onclick="showTab('media')">media</button>
-  <button class="tab" onclick="showTab('coursework')">coursework</button>
+  <a href="index.html" class="nav-link active">home</a>
+  <a href="about.html" class="nav-link">about</a>
+  <a href="writing.html" class="nav-link">writing</a>
+  <a href="media.html" class="nav-link">media</a>
+  <a href="coursework.html" class="nav-link">coursework</a>
 </div>
 
 <div class="main-content">
   <div class="content-inner">
-    
-    <div id="home" class="content active">
-      <h1>Junaid</h1>
-      <h4>
-        It's currently <span id="time"></span>, <span id="date"></span> — what are you chasing?
-      </h4>
-      <script>
-        function updateTime() {
-          const now = new Date();
-          document.getElementById('time').textContent =
-            now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-        }
+    <h1>Junaid</h1>
+    <h4>
+      It's currently <span id="time"></span>, <span id="date"></span> — what are you chasing?
+    </h4>
+    <script>
+      function updateTime() {
         const now = new Date();
-        document.getElementById('date').textContent =
-          now.toLocaleDateString(undefined, { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' });
-        updateTime();
-        setInterval(updateTime, 1000);
-      </script>
-      <p>Studying Math at NYU with interests in finance, english, and philosophy. Trying to cultivate a creative portfolio + wisdom</p>
-      
-      <h3>Current</h3>
+        document.getElementById('time').textContent =
+          now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+      }
+      const now = new Date();
+      document.getElementById('date').textContent =
+        now.toLocaleDateString(undefined, { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' });
+      updateTime();
+      setInterval(updateTime, 1000);
+    </script>
+    <p>Studying Math at NYU with interests in finance, english, and philosophy. Trying to cultivate a creative portfolio + wisdom</p>
+    
+    <h3>Current</h3>
+    <ul>
+      <li>Working on recruiting for investment banking right now...</li>
       <ul>
-        <li>Working on recruiting for investment banking right now...</li>
-        <ul>
-          <li><a href="industrials.html">Industrials Sector Memo</a></li>
-          <li><a href="business_services.html">Business Services Sector Memo</a></li>
-        </ul>
-        <li><a href="physical.html">Myself physically</a></li>
+        <li><a href="industrials.html">Industrials Sector Memo</a></li>
+        <li><a href="business_services.html">Business Services Sector Memo</a></li>
       </ul>
-      
-      <h4>Let's connect!</h4>
-      <p>jb8736 [at] nyu [dot] edu</p>
-      <p><a href="https://www.linkedin.com/in/junaid-bhatti-/">LinkedIn</a></p>
-      <p><a href="https://substack.com/@junaidbh?">Substack</a></p>
-    </div>
-
-    <div id="about" class="content">
-      <h1>About Me</h1>
-      <h3>"The best time to plant a tree was twenty years ago. The second best time is now"</h3>
-      <p>This site was built as a sanctuary for my collection of notes, writing, goals, and projects I'm working on.</p>
-      <br>
-      <p>In all honesty, I just want to learn. I've been privileged to have the time and resources to explore, study, and meet people, but feel that I have to have the autonomy, willpower, and discipline take it to the next level</p>
-      <p>I want to spend more time creatively and distanced from the more toxic parts of college life, and spend more time reflecting, writing, reading, and learning from the sources that I consider to be great (famous writers, thinkers, speakers, art, media, etc.)</p>
-      <br>
-      <h3>Tangible Goals:</h3>
-      <li>Finish recruiting successfully</li>
-      <li>Put on more muscle, while getting more functionally athletic</li>
-      <li>Take ridiculously challenging classes that I never thought I could, and prove to myself that I'm capable</li>
-      <h3>Intangibles</h3>
-      <li>More action, less thought</li>
-      <li>Get into challenging discourse with myself via writing, and with people via discussions</li>
-      <li>Build self-confidence, and be comfortable exploring the untapped emotion of embarrassment</li>
-    </div>
-
-    <div id="writing" class="content">
-      <h1>Writing</h1>
-      <div class="writing-entry">
-        <p class="writing-date">January 15, 2025</p>
-        <a href="2025_reflection.html" class="writing-link">2025 Reflection -- New Year, Same Me</a>
-      </div>
-      <div class="writing-entry">
-        <p class="writing-date">December 10, 2024</p>
-        <a href="moving_through.html" class="writing-link">Moving through the world without asking for permission</a>
-      </div>
-      <div class="writing-entry">
-        <p class="writing-date">November 3, 2024</p>
-        <a href="icingthekicker.html" class="writing-link">Icing the Kicker</a>
-      </div>
-      <div class="writing-entry">
-        <p class="writing-date">October 22, 2024</p>
-        <a href="existential_isolation.html" class="writing-link">Existential Isolation</a>
-      </div>
-    </div>
-
-    <div id="media" class="content">
-      <h1>My favorite pieces of media</h1>
-      <p><i>Link to full media page with tabs: <a href="media.html">View Media</a></i></p>
-    </div>
-
-    <div id="coursework" class="content">
-      <h1>Past Coursework</h1>
-      <p><i>Add your coursework content here...</i></p>
-    </div>
-
+      <li><a href="physical.html">Myself physically</a></li>
+    </ul>
+    
+    <h4>Let's connect!</h4>
+    <p>jb8736 [at] nyu [dot] edu</p>
+    <p><a href="https://www.linkedin.com/in/junaid-bhatti-/">LinkedIn</a></p>
+    <p><a href="https://substack.com/@junaidbh?">Substack</a></p>
   </div>
 </div>
-
-<script>
-  function showTab(tabName) {
-    const contents = document.querySelectorAll('.content');
-    contents.forEach(content => content.classList.remove('active'));
-    
-    const tabs = document.querySelectorAll('.tab');
-    tabs.forEach(tab => tab.classList.remove('active'));
-    
-    document.getElementById(tabName).classList.add('active');
-    event.target.classList.add('active');
-  }
-</script>
 </body>
 </html>
