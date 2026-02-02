@@ -41,10 +41,24 @@
       flex: 1;
       padding: 60px 60px 60px 50px;
       max-width: none;
+      position: relative;
     }
     
     .content-inner {
       max-width: 700px;
+    }
+    
+    .contact-info {
+      position: absolute;
+      top: 60px;
+      right: 60px;
+      text-align: right;
+      font-size: 14px;
+    }
+    
+    .contact-info p {
+      margin: 4px 0;
+      color: #666;
     }
     
     a { 
@@ -69,12 +83,19 @@
 <div class="sidebar">
   <a href="index.html" class="nav-link active">home</a>
   <a href="aboutme.html" class="nav-link">about</a>
-  <a href="writingpage.html" class="nav-link">writing</a>
+  <a href="writing.html" class="nav-link">writing</a>
   <a href="media.html" class="nav-link">media</a>
   <a href="coursework.html" class="nav-link">coursework</a>
 </div>
 
 <div class="main-content">
+  <div class="contact-info">
+    <p>email</p>
+    <p><a href="mailto:jb8736@nyu.edu">jb8736@nyu.edu</a></p>
+    <p><a href="https://www.linkedin.com/in/junaid-bhatti-/">LinkedIn</a></p>
+    <p><a href="https://substack.com/@junaidbh?">Substack</a></p>
+  </div>
+
   <div class="content-inner">
     <h1>Junaid</h1>
     <h4>
@@ -103,11 +124,6 @@
       </ul>
       <li><a href="physical.html">Myself physically</a></li>
     </ul>
-    
-    <h4>Let's connect!</h4>
-    <p>jb8736 [at] nyu [dot] edu</p>
-    <p><a href="https://www.linkedin.com/in/junaid-bhatti-/">LinkedIn</a></p>
-    <p><a href="https://substack.com/@junaidbh?">Substack</a></p>
   </div>
 </div>
 </body>
