@@ -6,66 +6,151 @@
 <style>
   body {
     font-family: serif;
-    margin: 60px;
+    margin: 0;
     line-height: 1.6;
-    max-width: 650px;
+    display: flex;
   }
+  
+  .sidebar {
+    width: 180px;
+    padding: 60px 30px 60px 60px;
+    min-height: 100vh;
+    flex-shrink: 0;
+  }
+  
+  .tab {
+    display: block;
+    padding: 6px 0;
+    margin-bottom: 8px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-family: serif;
+    font-size: 17px;
+    color: #999;
+    transition: color 0.2s;
+    text-align: left;
+    width: 100%;
+  }
+  
+  .tab:hover {
+    color: #333;
+  }
+  
+  .tab.active {
+    color: #000;
+  }
+  
+  .main-content {
+    flex: 1;
+    padding: 60px 60px 60px 50px;
+    max-width: none;
+  }
+  
+  .content-inner {
+    max-width: 700px;
+  }
+  
   a { color: blue; }
-
   p {
     margin: 4px 0;
+  }
+  
+  .content {
+    display: none;
+  }
+  
+  .content.active {
+    display: block;
   }
 </style>
 </head>
 <body>
+<div class="sidebar">
+  <button class="tab active" onclick="showTab('books')">books</button>
+  <button class="tab" onclick="showTab('podcasts')">podcasts</button>
+  <button class="tab" onclick="showTab('movies')">movies</button>
+  <button class="tab" onclick="showTab('shows')">shows</button>
+  <button class="tab" onclick="showTab('music')">music</button>
+</div>
 
-<h1>Some of my favorite media I've consumed</h1>
-
-<h2>Books</h2>
-<ul>
-  <p> <i>Moby Dick</i> by Herman Melville -- the most profound novel I've ever read, discussed it in an English class and fell in love. <i>Billy Budd</i> is also fantastic 
-  <p> <i>The Red Badge of Courage</i> by Stephen Crane -- my favorite war book
-  <p> <i>Walden</i> by Henry David Thoreau-- everyone who cares about nature and craves ways to get away from society should read this  
-  <p> <i>The Royal Game</i> by Stefan Zweig -- an epic novella about chess, showcasing the power of the mind
-</ul>
-
-<h2>Podcasts</h2>
-<ul>
-  <p>Lex Fridman - has some of the world's greatest thinkers on here, have really fallen in love with these recently
-  <p><i>The 7 </i>by the Washington Post -- I start my day with seven headlines from around the world
-</ul>
-<h2>Movies</h2>
-<ul> <p><i> I feel strongly about these.... @junaidb on letterboxd</i>
-  <p>City of God -- no words, just perfection
-  <p>Good Will Hunting -- insane debut
-  <p>The Motorcycle Diaries
-  <p>The Departed -- ending scene + song make this a 10/10
-  <p>Fantastic Mr.Fox -- be who you're meant to be
-  <p>Casablanca
-  <p>Miracle -- greatest sports movie imo
-</ul>
-
-<h2>Shows</h2>
-<ul>
-  <p>True Detective (Season 1) -- solidified my number #1 favorite actor as Matthew McConaughey
-  <p>Cowboy Bebop -- character writing, soundtrack, and animation are peak
-  <p>Atlanta -- Donald Glover, the GOAT
-  <p>Bojack Horseman -- soft spot in my heart</p>
-</ul>
-
-<h2>Music</h2>
-<ul>
-  <p>The Strokes -- or anything Julian Casablancas
-  <p>Blue Coupe - Twin Peaks</p>
-  <p>Flimsier - King Krule</p>
-  <p>Us and Them - Pink Floyd</p>
-  <p>Song on the Beach - Arcade Fire</p>
-  <p>Shake the Frost (Live) - Tyler Childers</p>
+<div class="main-content">
+  <div class="content-inner">
+    <h1>Some of my favorite media I've consumed</h1>
     
-</ul>
+    <div id="books" class="content active">
+      <h2>Books</h2>
+      <ul>
+        <p> <i>Moby Dick</i> by Herman Melville -- the most profound novel I've ever read, discussed it in an English class and fell in love. <i>Billy Budd</i> is also fantastic 
+        <p> <i>The Red Badge of Courage</i> by Stephen Crane -- my favorite war book
+        <p> <i>Walden</i> by Henry David Thoreau-- everyone who cares about nature and craves ways to get away from society should read this  
+        <p> <i>The Royal Game</i> by Stefan Zweig -- an epic novella about chess, showcasing the power of the mind
+      </ul>
+    </div>
 
-<p><a href="index.html">← back</a></p>
+    <div id="podcasts" class="content">
+      <h2>Podcasts</h2>
+      <ul>
+        <p>Lex Fridman - has some of the world's greatest thinkers on here, have really fallen in love with these recently
+        <p><i>The 7 </i>by the Washington Post -- I start my day with seven headlines from around the world
+      </ul>
+    </div>
 
+    <div id="movies" class="content">
+      <h2>Movies</h2>
+      <ul> <p><i> I feel strongly about these.... @junaidb on letterboxd</i>
+        <p>City of God -- no words, just perfection
+        <p>Good Will Hunting -- insane debut
+        <p>The Motorcycle Diaries
+        <p>The Departed -- ending scene + song make this a 10/10
+        <p>Fantastic Mr.Fox -- be who you're meant to be
+        <p>Casablanca
+        <p>Miracle -- greatest sports movie imo
+      </ul>
+    </div>
+
+    <div id="shows" class="content">
+      <h2>Shows</h2>
+      <ul>
+        <p>True Detective (Season 1) -- solidified my number #1 favorite actor as Matthew McConaughey
+        <p>Cowboy Bebop -- character writing, soundtrack, and animation are peak
+        <p>Atlanta -- Donald Glover, the GOAT
+        <p>Bojack Horseman -- soft spot in my heart</p>
+      </ul>
+    </div>
+
+    <div id="music" class="content">
+      <h2>Music</h2>
+      <ul>
+        <p>The Strokes -- or anything Julian Casablancas
+        <p>Blue Coupe - Twin Peaks</p>
+        <p>Flimsier - King Krule</p>
+        <p>Us and Them - Pink Floyd</p>
+        <p>Song on the Beach - Arcade Fire</p>
+        <p>Shake the Frost (Live) - Tyler Childers</p>
+      </ul>
+    </div>
+
+    <p><a href="index.html">← back</a></p>
+  </div>
+</div>
+
+<script>
+  function showTab(tabName) {
+    // Hide all content
+    const contents = document.querySelectorAll('.content');
+    contents.forEach(content => content.classList.remove('active'));
+    
+    // Remove active class from all tabs
+    const tabs = document.querySelectorAll('.tab');
+    tabs.forEach(tab => tab.classList.remove('active'));
+    
+    // Show selected content
+    document.getElementById(tabName).classList.add('active');
+    
+    // Add active class to clicked tab
+    event.target.classList.add('active');
+  }
+</script>
 </body>
 </html>
-
