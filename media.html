@@ -168,6 +168,9 @@
     
     // Add active class to clicked tab
     event.target.classList.add('active');
+
+  if (location.hash === "#restaurants") {
+    showTab("restaurants");
   }
 </script>
 </body>
