@@ -155,20 +155,24 @@
 
 <script>
   function showTab(tabName) {
-    // Hide all content
-    const contents = document.querySelectorAll('.content');
-    contents.forEach(content => content.classList.remove('active'));
-    
-    // Remove active class from all tabs
-    const tabs = document.querySelectorAll('.tab');
-    tabs.forEach(tab => tab.classList.remove('active'));
-    
-    // Show selected content
-    document.getElementById(tabName).classList.add('active');
-    
-    // Add active class to clicked tab
-    event.target.classList.add('active');
+    // hide all content
+    document.querySelectorAll('.content').forEach(c =>
+      c.classList.remove('active')
+    );
 
+    // deactivate all tabs
+    document.querySelectorAll('.tab').forEach(t =>
+      t.classList.remove('active')
+    );
+
+    // activate chosen tab + content
+    document.getElementById(tabName).classList.add('active');
+    document
+      .querySelector(`button[onclick="showTab('${tabName}')"]`)
+      .classList.add('active');
+  }
+
+  // open Restaurants tab if URL has #restaurants
   if (location.hash === "#restaurants") {
     showTab("restaurants");
   }
