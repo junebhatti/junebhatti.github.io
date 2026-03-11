@@ -17,6 +17,26 @@
     min-height: 100vh;
     flex-shrink: 0;
   }
+
+  .nav-link {
+    display: block;
+    padding: 6px 0;
+    margin-bottom: 8px;
+    font-family: serif;
+    font-size: 17px;
+    color: #999;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .nav-link:hover { color: #333; }
+  .nav-link.active { color: #000; }
+
+  .sidebar-divider {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 16px 0;
+  }
   
   .tab {
     display: block;
@@ -33,13 +53,8 @@
     width: 100%;
   }
   
-  .tab:hover {
-    color: #333;
-  }
-  
-  .tab.active {
-    color: #000;
-  }
+  .tab:hover { color: #333; }
+  .tab.active { color: #000; }
   
   .main-content {
     flex: 1;
@@ -52,28 +67,29 @@
   }
   
   a { color: blue; }
-  p {
-    margin: 4px 0;
-  }
+  p { margin: 4px 0; }
   
-  .content {
-    display: none;
-  }
-  
-  .content.active {
-    display: block;
-  }
+  .content { display: none; }
+  .content.active { display: block; }
 </style>
 </head>
 <body>
 <div class="sidebar">
+  <a href="index.html" class="nav-link">home</a>
+  <a href="aboutme.html" class="nav-link">about</a>
+  <a href="writingpage.html" class="nav-link">writing</a>
+  <a href="media.html" class="nav-link active">media</a>
+  <a href="coursework.html" class="nav-link">coursework</a>
+  <a href="readings.html" class="nav-link">readings</a>
+
+  <hr class="sidebar-divider">
+
   <button class="tab active" onclick="showTab('books')">books</button>
   <button class="tab" onclick="showTab('podcasts')">podcasts</button>
   <button class="tab" onclick="showTab('movies & shows')">movies & shows</button>
   <button class="tab" onclick="showTab('music')">music</button>
   <button class="tab" onclick="showTab('restaurants')">restaurants</button>
   <button class="tab" onclick="showTab('youtube_videos')">Blogs/Videos/Channels</button>
-
 </div>
 
 <div class="main-content">
@@ -83,36 +99,39 @@
     <div id="books" class="content active">
       <h2>Books</h2>
       <ul>
-        <p> <i>Moby Dick</i> by Herman Melville -- the most profound novel I've ever read, discussed it in an English class and fell in love. <i>Billy Budd</i> is also fantastic 
-        <p> <i>The Red Badge of Courage</i> by Stephen Crane -- my favorite war book
-        <p> <i>Walden</i> by Henry David Thoreau-- everyone who cares about nature and craves ways to get away from society should read this  
-        <p> <i>The Royal Game</i> by Stefan Zweig -- an epic novella about chess, showcasing the power of the mind
+        <p><i>Moby Dick</i> by Herman Melville -- the most profound novel I've ever read, discussed it in an English class and fell in love. <i>Billy Budd</i> is also fantastic</p>
+        <p><i>The Red Badge of Courage</i> by Stephen Crane -- my favorite war book</p>
+        <p><i>Walden</i> by Henry David Thoreau -- everyone who cares about nature and craves ways to get away from society should read this</p>
+        <p><i>The Royal Game</i> by Stefan Zweig -- an epic novella about chess, showcasing the power of the mind</p>
       </ul>
     </div>
 
     <div id="podcasts" class="content">
       <h2>Podcasts</h2>
       <ul>
-        <p>Lex Fridman - has some of the world's greatest thinkers on here, have really fallen in love with these recently
-        <p><i>The 7 </i>by the Washington Post -- I start my day with seven headlines from around the world
+        <p>Lex Fridman - has some of the world's greatest thinkers on here, have really fallen in love with these recently</p>
+        <p><i>The 7</i> by the Washington Post -- I start my day with seven headlines from around the world</p>
         <p>Hidden Voices - a handful of these have been pretty insightful</p>
       </ul>
     </div>
 
     <div id="movies & shows" class="content">
       <h3>Movies</h3>
-      <ul> <p><i> I feel strongly about these.... @junaidb on letterboxd</i>
-        <p>City of God -- no words, just perfection
-        <p>Good Will Hunting -- insane debut
-        <p>The Motorcycle Diaries
-        <p>The Departed -- ending scene + song make this a 10/10
-        <p>Fantastic Mr.Fox -- be who you're meant to be
-        <p>Casablanca
-        <p>Miracle -- greatest sports movie imo
+      <ul>
+        <p><i>I feel strongly about these.... @junaidb on letterboxd</i></p>
+        <p>City of God -- no words, just perfection</p>
+        <p>Good Will Hunting -- insane debut</p>
+        <p>The Motorcycle Diaries</p>
+        <p>The Departed -- ending scene + song make this a 10/10</p>
+        <p>Fantastic Mr.Fox -- be who you're meant to be</p>
+        <p>Casablanca</p>
+        <p>Miracle -- greatest sports movie imo</p>
+      </ul>
       <h3>Shows</h3>
-        <p>True Detective (Season 1) -- solidified my number #1 favorite actor as Matthew McConaughey
-        <p>Cowboy Bebop -- character writing, soundtrack, and animation are peak
-        <p>Atlanta -- Donald Glover, the GOAT
+      <ul>
+        <p>True Detective (Season 1) -- solidified my number #1 favorite actor as Matthew McConaughey</p>
+        <p>Cowboy Bebop -- character writing, soundtrack, and animation are peak</p>
+        <p>Atlanta -- Donald Glover, the GOAT</p>
         <p>Bojack Horseman -- soft spot in my heart</p>
       </ul>
     </div>
@@ -120,7 +139,7 @@
     <div id="music" class="content">
       <h2>Music</h2>
       <ul>
-        <p>The Strokes -- or anything Julian Casablancas
+        <p>The Strokes -- or anything Julian Casablancas</p>
         <p>Blue Coupe - Twin Peaks</p>
         <p>Flimsier - King Krule</p>
         <p>Us and Them - Pink Floyd</p>
@@ -128,27 +147,28 @@
         <p>Shake the Frost (Live) - Tyler Childers</p>
       </ul>
     </div>
+
     <div id="restaurants" class="content">
       <h2>Restaurants</h2>
       <h3>Los Angeles</h3>
       <ul>
-      <p>Holbox</p>
-      <p>Sun Nong Dan</p>
-      <p>Urth Cafe</p>
+        <p>Holbox</p>
+        <p>Sun Nong Dan</p>
+        <p>Urth Cafe</p>
       </ul>
       <h3>New York City</h3>
       <ul>
-      <p>LOS MARISCOS</p>
-      <p>Pause Cafe</p>
-      <p>Jonny's Pizza</p>
+        <p>LOS MARISCOS</p>
+        <p>Pause Cafe</p>
+        <p>Jonny's Pizza</p>
+        <p>Mojo East</p>
       </ul>
     </div>
-    
+
     <div id="youtube_videos" class="content">
       <h2>blogs/videos/channels</h2>
       <ul>
-        <p>Keith D
-        <p>
+        <p>Keith D</p>
       </ul>
     </div>
 
@@ -158,24 +178,12 @@
 
 <script>
   function showTab(tabName) {
-    // hide all content
-    document.querySelectorAll('.content').forEach(c =>
-      c.classList.remove('active')
-    );
-
-    // deactivate all tabs
-    document.querySelectorAll('.tab').forEach(t =>
-      t.classList.remove('active')
-    );
-
-    // activate chosen tab + content
+    document.querySelectorAll('.content').forEach(c => c.classList.remove('active'));
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
     document.getElementById(tabName).classList.add('active');
-    document
-      .querySelector(`button[onclick="showTab('${tabName}')"]`)
-      .classList.add('active');
+    document.querySelector(`button[onclick="showTab('${tabName}')"]`).classList.add('active');
   }
 
-  // open Restaurants tab if URL has #restaurants
   if (location.hash === "#restaurants") {
     showTab("restaurants");
     window.scrollTo(0, 0);
