@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Readings - Junaid</title>
+  <style>
+    body {
+      font-family: serif;
+      margin: 0;
+      line-height: 1.6;
+      display: flex;
+    }
+    
+    .sidebar {
+      width: 180px;
+      padding: 60px 30px 60px 60px;
+      min-height: 100vh;
+      flex-shrink: 0;
+    }
+    
+    .nav-link {
+      display: block;
+      padding: 6px 0;
+      margin-bottom: 8px;
+      font-family: serif;
+      font-size: 17px;
+      color: #999;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    
+    .nav-link:hover { color: #333; }
+    .nav-link.active { color: #000; }
+    
+    .main-content {
+      flex: 1;
+      padding: 60px 60px 60px 50px;
+      max-width: none;
+    }
+    
+    .content-inner {
+      max-width: 700px;
+    }
+
+    a { color: blue; }
+
+    .reading-entry {
+      margin-bottom: 28px;
+      padding-bottom: 28px;
+      border-bottom: 1px solid #eee;
+    }
+
+    .reading-entry:last-of-type {
+      border-bottom: none;
+    }
+
+    .reading-entry h3 {
+      margin: 0 0 2px 0;
+      font-size: 18px;
+      font-weight: normal;
+    }
+
+    .reading-entry .author {
+      color: #999;
+      font-size: 14px;
+      margin: 0 0 8px 0;
+    }
+
+    .reading-actions {
+      display: flex;
+      gap: 18px;
+      font-size: 14px;
+    }
+
+    .reading-actions a {
+      color: blue;
+    }
+  </style>
+</head>
+<body>
+<div class="sidebar">
+  <a href="index.html" class="nav-link">home</a>
+  <a href="aboutme.html" class="nav-link">about</a>
+  <a href="writingpage.html" class="nav-link">writing</a>
+  <a href="media.html" class="nav-link">media</a>
+  <a href="coursework.html" class="nav-link">coursework</a>
+  <a href="readings.html" class="nav-link active">readings</a>
+</div>
+
+<div class="main-content">
+  <div class="content-inner">
+    <h1>Recent Readings</h1>
+
+    <!-- READING ENTRY — copy and paste this block to add a new one -->
+
+    <div class="reading-entry">
+      <h3>Existentialism is a Humanism</h3>
+      <p class="author">Jean-Paul Sartre, 1946</p>
+      <div class="reading-actions">
+        <a href="readings/civil-disobedience-notes.html">→ my notes</a>
+        <a href="pdfs/civil-disobedience.pdf" download>↓ download pdf</a>
+      </div>
+    </div>
+
+    <div class="reading-entry">
+      <h3>Bartleby, the Scrivener</h3>
+      <p class="author">Herman Melville, 1853</p>
+      <div class="reading-actions">
+        <a href="readings/bartleby-notes.html">→ my notes</a>
+        <a href="pdfs/bartleby.pdf" download>↓ download pdf</a>
+      </div>
+    </div>
+    <!-- end reading entries -->
+
+    <p><a href="index.html">← back</a></p>
+  </div>
+</div>
+</body>
+</html>
